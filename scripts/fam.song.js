@@ -1,6 +1,6 @@
 define([
   "require",
-  "fam.model"
+  "../../fam-orm/scripts/fam.model"
 ], function (require, FAMModel) {
 
   "use strict";
