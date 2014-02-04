@@ -4,7 +4,25 @@ define(['../scripts/fam.album.js'], function(FamAlbum){
     var album;
 
     beforeEach(function(){
-      album = new FamAlbum();
+      album = new FamAlbum({id: 1});
+    });
+
+    describe('resourcePath', function(){
+      it('should be set to /albums', function(){
+        expect(album.resourcePath).to.eql('/albums');
+      });
+    });
+
+    describe('jsonRoot', function(){
+      it('should be set to album', function(){
+        expect(album.jsonRoot).to.eql('album');
+      });
+    });
+
+    describe('resourceUrl', function(){
+      it('should be set to /albums/1', function(){
+        expect(album.resourceUrl()).to.eql('/albums/1');
+      });
     });
 
     describe('inhereting', function(){

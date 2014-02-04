@@ -16,9 +16,9 @@ define([
    * For more information on the available methods please view FAMModel
    */
   var FAMAlbum = FAMModel.extend({
-
-    resource_path: "/albums"
-
+    name: "FAMAlbum",
+    resourcePath: "/albums",
+    jsonRoot: "album"
   });
 
   return FAMAlbum;

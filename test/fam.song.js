@@ -5,7 +5,25 @@ define(['../scripts/fam.song.js'], function(FamSong){
     var song;
 
     beforeEach(function(){
-      song = new FamSong();
+      song = new FamSong({id: 1});
+    });
+
+    describe('resourcePath', function(){
+      it('should be set to /artists', function(){
+        expect(song.resourcePath).to.eql('/songs');
+      });
+    });
+
+    describe('jsonRoot', function(){
+      it('should be set to playlist', function(){
+        expect(song.jsonRoot).to.eql('song');
+      });
+    });
+
+    describe('resourceUrl', function(){
+      it('should be set to /albums/1', function(){
+        expect(song.resourceUrl()).to.eql('/songs/1');
+      });
     });
 
     describe('inhereting', function(){
